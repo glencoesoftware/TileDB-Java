@@ -142,7 +142,7 @@ stages:
             displayName: 'GitHub Release'
             inputs:
               gitHubConnection: github_tiledb
-              repositoryName: TileDB-Inc/TileDB-Java
+              repositoryName: glencoesoftware/TileDB-Java
               tag: $(Build.SourceBranchName)
               action: "edit"
               assets: $(Build.BinariesDirectory)/jars/*.jar

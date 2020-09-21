@@ -141,7 +141,7 @@ stages:
           - task: GithubRelease@0
             displayName: 'GitHub Release'
             inputs:
-              gitHubConnection: github_tiledb
+              gitHubConnection: github.com_chris-allan
               repositoryName: glencoesoftware/TileDB-Java
               tag: $(Build.SourceBranchName)
               action: "edit"

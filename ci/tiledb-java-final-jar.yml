@@ -59,13 +59,9 @@ steps:
       artifactName: final-jar
     condition: succeeded()
 
-
   - bash: |
-      ./ci/upload_to_maven.sh
+      ./gradlew publish
     env:
-      GPG_KEY_ID: $(GPG_KEY_ID)
-      GPG_PASSPHRASE: $(GPG_PASSPHRASE)
-      GPG_SECRET_KEYS_ENC: $(GPG_SECRET_KEYS_ENC)
-      SONATYPE_USERNAME: $(SONATYPE_USERNAME)
-      SONATYPE_PASSWORD: $(SONATYPE_PASSWORD)
+      ARTIFACTORY_USERNAME: $(ARTIFACTORY_USERNAME)
+      ARTIFACTORY_PASSWORD: $(ARTIFACTORY_PASSWORD)
     displayName: "Publish to Maven"
